@@ -1,26 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/App/App';
+import Home from './components/Home/Home';
 import About from './components/About/About'
 import reportWebVitals from './reportWebVitals';
 import {
     BrowserRouter as Router,
     Switch,
-    Route
+    Route,
+    Link,
+    BrowserRouter
 } from "react-router-dom";
-
+import { Tabs, Tab } from '@material-ui/core';
+import TopBar from './components/TopBar/TopBar';
 ReactDOM.render(
-    <Router>
-        <Switch>
-            <Route path="/about">
-                <About/>
-            </Route>
-            <Route path="/">
-                <App/>
-            </Route>
-        </Switch>
-    </Router>,
+    <>
+        <BrowserRouter>
+            <TopBar />
+            <Switch>
+                <Route path="/about">
+                    <About />
+                </Route>
+                <Route path="/">
+                    <Home />
+                </Route>
+            </Switch>
+        </BrowserRouter>
+    </>,
     document.getElementById('root')
 );
 
