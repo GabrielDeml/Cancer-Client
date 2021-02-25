@@ -5,7 +5,8 @@
   "homepage": "https://WPI-Ghana-Cancer-IQP.github.io/client",
   "dependencies": {
     "@material-ui/core": "^4.11.3",
-    "@tensorflow/tfjs": "^3.0.0",
+    "@tensorflow-models/mobilenet": "^2.1.0",
+    "@tensorflow/tfjs": "^3.2.0",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.2",
