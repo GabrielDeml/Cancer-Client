@@ -1,3 +1,3 @@
 #!/bin/bash
 cd models
-npm install http-server -g
+http-server -c1 --cors .

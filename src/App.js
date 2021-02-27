@@ -52,9 +52,9 @@ class App extends Component {
     console.log('Predictions: ');
     console.log(value);
     if (value[0] == 0) {
-      this.setState({ msg: 'No Cancer' })
+      this.setState({ msg: 'malignant' })
     } else {
-      this.setState({ msg: 'Cancer found' })
+      this.setState({ msg: 'Benign' })
     }
   }
 
@@ -75,6 +75,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>This isn't medical advice it just is a test</h1>
           <input type="file" accept="image/*" onChange={handleImageUpload} ref={imgRef} multiple="false" />
           <img src={cat} ref={imgRef} />
           <button onClick={() => this.testML(imgRef)}>Run model</button>
