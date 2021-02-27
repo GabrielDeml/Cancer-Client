@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import logo from './logo.svg';
 import cat from './test.jpg';
 import './App.css';
-
-
 import * as tf from '@tensorflow/tfjs';
 
 
