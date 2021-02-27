@@ -39,7 +39,7 @@ class App extends Component {
 
     // Load the model.
     // const model = await mobilenet.load();
-    const model = await tf.loadLayersModel('http://localhost:8080/model.json');
+    const model = await tf.loadLayersModel('https://gabrieldeml.github.io/Cancer-Client/models/model.json');
 
 
     // Classify the image.
