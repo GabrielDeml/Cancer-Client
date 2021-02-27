@@ -24,9 +24,10 @@ async function testML(imgRef) {
 
 
   // Classify the image.
-  const predictions = await model.predict(t4d);
+  const predictions = model.predict(t4d);
 
   const value = predictions.dataSync()
+  // TODO show user the output of the predcition
   console.log('Predictions: ');
   console.log(value);
 }
@@ -36,6 +37,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        // TODO make it so user can upload an image
         <img src={cat} ref={imgRef} />
         <button onClick={() => testML(imgRef)}>Run model</button>
       </header>
