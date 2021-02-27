@@ -15,7 +15,7 @@ async function testML(imgRef) {
 
   const smalImg = tf.image.resizeBilinear(img, [224, 224]);
   const resized = tf.cast(smalImg, 'float32');
-  const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 224,224, 3])
+  const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 224, 224, 3])
   // img.reshape(1, 224, 224, 3)
 
   // Load the model.
@@ -26,8 +26,9 @@ async function testML(imgRef) {
   // Classify the image.
   const predictions = await model.predict(t4d);
 
+  const value = predictions.dataSync()
   console.log('Predictions: ');
-  console.log(predictions);
+  console.log(value);
 }
 
 function App() {
@@ -36,18 +37,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={cat} ref={imgRef} />
-        <button onClick={() => testML(imgRef)}>Press me</button>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button onClick={() => testML(imgRef)}>Run model</button>
       </header>
     </div>
   );
