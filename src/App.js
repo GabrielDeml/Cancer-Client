@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import cat from './cat.jpeg';
+import cat from './test.jpg';
 import './App.css';
 
 
@@ -11,13 +11,20 @@ async function testML(imgRef) {
 
   const mobilenet = require('@tensorflow-models/mobilenet');
 
-  const img = imgRef.current;
+  const img = tf.browser.fromPixels(imgRef.current);
+
+  const smalImg = tf.image.resizeBilinear(img, [224, 224]);
+  const resized = tf.cast(smalImg, 'float32');
+  const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 224,224, 3])
+  // img.reshape(1, 224, 224, 3)
 
   // Load the model.
-  const model = await mobilenet.load();
+  // const model = await mobilenet.load();
+  const model = await tf.loadLayersModel('http://localhost:8080/model.json');
+
 
   // Classify the image.
-  const predictions = await model.classify(img);
+  const predictions = await model.predict(t4d);
 
   console.log('Predictions: ');
   console.log(predictions);
