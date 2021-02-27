@@ -32,8 +32,8 @@ class App extends Component {
 
     const img = tf.browser.fromPixels(imgRef.current);
 
-    const smalImg = tf.image.resizeBilinear(img, [224, 224]);
-    const resized = tf.cast(smalImg, 'float32');
+    const smallImg = tf.image.resizeBilinear(img, [224, 224]);
+    const resized = tf.cast(smallImg, 'float32');
     const t4d = tf.tensor4d(Array.from(resized.dataSync()), [1, 224, 224, 3])
     // img.reshape(1, 224, 224, 3)
 
