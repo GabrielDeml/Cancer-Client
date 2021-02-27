@@ -34,10 +34,23 @@ async function testML(imgRef) {
 
 function App() {
   const imgRef = React.createRef();
+  const handleImageUpload = e => {
+    const [file] = e.target.files;
+    if (file) {
+      const reader = new FileReader();
+      const { current } = imgRef;
+      current.file = file;
+      reader.onload = e => {
+        current.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  
   return (
     <div className="App">
       <header className="App-header">
-        // TODO make it so user can upload an image
+        <input type="file" accept="image/*" onChange={handleImageUpload} ref={imgRef} multiple="false" />
         <img src={cat} ref={imgRef} />
         <button onClick={() => testML(imgRef)}>Run model</button>
       </header>
