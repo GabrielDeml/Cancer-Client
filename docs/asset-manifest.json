@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Cancer-Client/static/css/main.8c8b27cf.chunk.css",
-    "main.js": "/Cancer-Client/static/js/main.98f422f3.chunk.js",
-    "main.js.map": "/Cancer-Client/static/js/main.98f422f3.chunk.js.map",
+    "main.js": "/Cancer-Client/static/js/main.b0f4cc3a.chunk.js",
+    "main.js.map": "/Cancer-Client/static/js/main.b0f4cc3a.chunk.js.map",
     "runtime-main.js": "/Cancer-Client/static/js/runtime-main.eb379191.js",
     "runtime-main.js.map": "/Cancer-Client/static/js/runtime-main.eb379191.js.map",
     "static/js/2.25a22f6b.chunk.js": "/Cancer-Client/static/js/2.25a22f6b.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.eb379191.js",
     "static/js/2.25a22f6b.chunk.js",
     "static/css/main.8c8b27cf.chunk.css",
-    "static/js/main.98f422f3.chunk.js"
+    "static/js/main.b0f4cc3a.chunk.js"
   ]
 }
